@@ -1,9 +1,9 @@
 {
-  "name": "elixir-jsonschema-validator",
-  "version": "1.5.0",
+  "name": "elixir-jsonschema-validator-biosamples-fork",
+  "version": "1.5.1",
   "description": "Custom JSON-Schema keywords for Ajv validator and validation service with API",
   "main": "index.js",
-  "repository": "https://github.com/elixir-europe/json-schema-validator.git",
+  "repository": "https://github.com/EBIBioSamples/json-schema-validator.git",
   "scripts": {
     "start": "node src/server.js",
     "test": "jest -i",
@@ -20,7 +20,7 @@
     "schema",
     "validator"
   ],
-  "author": "EMBL-EBI-SUBS, fpenim, rolando-ebi, simonjupp",
+  "author": "EMBL-EBI-SUBS, fpenim, rolando-ebi, simonjupp, EBI-BioSamples",
   "license": "Apache-2.0",
   "dependencies": {
     "ajv": "^6.10.2",
