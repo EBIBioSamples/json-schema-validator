@@ -17,7 +17,6 @@ test:
 deploy:
   stage: deploy
   script:
-#    - ssh-agent -s
     - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
     - eval $(ssh-agent -s)
     - echo "$NOAH_LOGIN_SSH_KEY" | tr -d '\r' | ssh-add -
@@ -25,7 +24,7 @@ deploy:
     - chmod 700 ~/.ssh
     - ssh-keyscan ebi-cli >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
-    - ssh -v -o StrictHostKeyChecking=no isuru@ebi-cli rm -r /nfs/spot/data/test/biosamples/json-schema-validator
+    - ssh -v -o StrictHostKeyChecking=no isuru@ebi-cli rm -rf /nfs/spot/data/test/biosamples/json-schema-validator
     - scp -r -v -o StrictHostKeyChecking=no . isuru@ebi-cli:/nfs/spot/data/test/biosamples/json-schema-validator
     - ssh -v -o StrictHostKeyChecking=no isuru@ebi-cli become tc_spo01 "ssh wp-np2-40 'rm -rf /mnt/data/biosamples/sw/wwwdev/json-schema-validator'"
     - ssh -v -o StrictHostKeyChecking=no isuru@ebi-cli become tc_spo01 "ssh wp-np2-40 'scp -r ebi-cli:/nfs/spot/data/test/biosamples/json-schema-validator /mnt/data/biosamples/sw/wwwdev/json-schema-validator'"
