@@ -25,7 +25,7 @@ deploy:
     - chmod 700 ~/.ssh
     - ssh-keyscan ebi-cli >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
-    - scp -v -o StrictHostKeyChecking=no * isuru@ebi-cli:/nfs/spot/data/test/biosamples/json-schema-validator
+    - scp -r -v -o StrictHostKeyChecking=no . isuru@ebi-cli:/nfs/spot/data/test/biosamples/json-schema-validator
     - ssh -v -o StrictHostKeyChecking=no isuru@ebi-cli become tc_spo01 "ssh wp-np2-40 'scp -r ebi-cli:/nfs/spot/data/test/biosamples/json-schema-validator /mnt/data/biosamples/sw/wwwdev/json-schema-validator'"
   only:
     - master
