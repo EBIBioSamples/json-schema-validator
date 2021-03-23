@@ -26,6 +26,6 @@ deploy:
     - chmod 644 ~/.ssh/known_hosts
     - ssh -v -o StrictHostKeyChecking=no tc_spo01@wp-p1m2-3d "rm -rf ~/deployments/sw/www/json-schema-validator"
     - scp -r -v -o StrictHostKeyChecking=no . tc_spo01@wp-p1m2-3d:~/deployments/sw/www/json-schema-validator
-    - ssh -v -o StrictHostKeyChecking=no tc_spo01@wp-p1m2-3d "~/config/start_validator.sh"
+    - ssh -v -o StrictHostKeyChecking=no tc_spo01@wp-p1m2-3d "~/config/deploy_validator.sh"
   only:
     - master
