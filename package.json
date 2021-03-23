@@ -11,7 +11,7 @@
     "travis-test": "jest test/elixir-validator.test.js"
   },
   "engines": {
-    "node": "10.16.3"
+    "node": "v15.12.0"
   },
   "keywords": [
     "nodejs",
