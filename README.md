@@ -1,4 +1,4 @@
-:warning:
+:warning: **DEPRECATED**
 ### This repository is archived now in favour of enhanced and supported version [biovalidator](https://github.com/elixir-europe/biovalidator). Please use [biovalidator](https://github.com/elixir-europe/biovalidator) repository for all future uses and references.
 
 ***
